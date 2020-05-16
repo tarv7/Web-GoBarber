@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  app:
+    build: .
+    command: yarn start
+    restart: always
+    ports:
+      - 3001:3000
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - develop-network
+
+networks:
+  develop-network:
+    driver: bridge
